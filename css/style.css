@@ -500,7 +500,7 @@ hr {
 }
 
 .a-result:hover {
-    background-color:#f4d8e0;
+    background-color:#ffd8f5;
 }
 
 .a-result a{
@@ -517,7 +517,7 @@ hr {
 #search-form input[type=submit]{
     background-color: #f7f7f7;
     font-weight:normal;
-    color: #FC0FC0;
+    color: #fd41cd;
 }
 
 h2 {

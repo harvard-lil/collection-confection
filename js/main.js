@@ -4,8 +4,12 @@ var nuremberg_ret = false;
 var nuremberg_found = 0;
 var hollis_found = 0;
 
-function draw_doughnut() {
+// thanks http://stackoverflow.com/a/5493614
+function supportsSvg() {
+    return !!document.createElementNS && !!document.createElementNS('http://www.w3.org/2000/svg', "svg").createSVGRect;
+}
 
+function draw_doughnut() {
     // Let's see if we received any usable data. If so, draw it. If not, hide the vis.
     var data = 	[
     	  {coll: 'Nuremberg', num_found: nuremberg_found},
@@ -17,7 +21,7 @@ function draw_doughnut() {
         total_count = total_count +d.num_found;
     });
 
-	if (total_count > 0) {
+	if (total_count > 0 && supportsSvg()) {
 		$('#vis').empty();
 		$('#vis').show();
 
