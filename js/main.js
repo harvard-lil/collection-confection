@@ -4,10 +4,6 @@ var nuremberg_ret = false;
 var nuremberg_found = 0;
 var hollis_found = 0;
 
-// thanks http://stackoverflow.com/a/5493614
-function supportsSvg() {
-    return !!document.createElementNS && !!document.createElementNS('http://www.w3.org/2000/svg', "svg").createSVGRect;
-}
 
 function draw_doughnut() {
     // Let's see if we received any usable data. If so, draw it. If not, hide the vis.
@@ -16,12 +12,9 @@ function draw_doughnut() {
     	  {coll: 'Hollis', num_found: hollis_found}
     	];
     
-    var total_count = 0;
-    data.forEach(function(d) {
-        total_count = total_count +d.num_found;
-    });
+    var total_count = nuremberg_found + hollis_found;
 
-	if (total_count > 0 && supportsSvg()) {
+	if (total_count > 0 && Modernizr.svg && Modernizr.inlinesvg) {
 		$('#vis').empty();
 		$('#vis').show();
 

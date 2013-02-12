@@ -305,7 +305,7 @@ h3.type-leading{
     -webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
-	padding-right:40px;
+	-ms-box-sizing: border-box;
 }
 
 .text-block h1 {
@@ -509,7 +509,7 @@ hr {
 }
 
 #search-form input[type=text]{
-    width:350px;
+    width:65%;
     font-size: 20px;
     padding: 6px 10px;
 }
