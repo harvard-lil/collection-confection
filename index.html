@@ -14,16 +14,21 @@
     <!--[if lt IE 9]>
       <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-	<script src="js/modernizr.custom.19900.js"></script>
+	<script src="js/modernizr.custom.33001.js"></script>
 	<script type="text/javascript">
-		
-			Modernizr.load([{
-				test: Modernizr.svg && Modernizr.inlinesvg,
-				yep : [	'http://d3js.org/d3.v3.min.js' ]
-			},{load:["http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js",
-				         "js/handlebars.js",
-				 "js/main.js"]}]);
-			
+			Modernizr.load([
+				{
+					test: Modernizr.svg && Modernizr.inlinesvg,
+					yep : [	'http://d3js.org/d3.v3.min.js' ]
+				},
+				{
+					load:[
+							"http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js",
+							"js/handlebars.js",
+							"js/main.js"
+						]
+				}
+			]);
 	</script>
   </head>
 
