@@ -14,17 +14,17 @@
     <!--[if lt IE 9]>
       <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-<script src="http://www.visionofhumanity.org/wp-content/themes/gpi/maps/js/modernizr.js"></script>
-		<script type="text/javascript">
+	<script src="js/modernizr.custom.19900.js"></script>
+	<script type="text/javascript">
+		
+			Modernizr.load([{
+				test: Modernizr.svg && Modernizr.inlinesvg,
+				yep : [	'http://d3js.org/d3.v3.min.js' ]
+			},{load:["http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js",
+				         "js/handlebars.js",
+				 "js/main.js"]}]);
 			
-				Modernizr.load([{
-					test: Modernizr.svg && Modernizr.inlinesvg,
-					yep : [	'http://d3js.org/d3.v3.min.js' ]
-				},{load:["http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js",
- 				         "js/handlebars.js",
-					 "js/main.js"]}]);
-				
-		</script>
+	</script>
   </head>
 
   <body>
@@ -74,10 +74,6 @@
     
     <!-- Le javascript
     ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="js/handlebars.js"></script>
-    <script src="js/main.js"></script>-->
 	<script id="docs-template" type="text/x-handlebars-template">
 		{{#docs}}
 		<p class="a-result">
@@ -93,7 +89,7 @@
 		</a>		
 		</p>
 		{{/docs}}
-    </script> 
+    </script>
 
 	<script id="results-num-template" type="text/x-handlebars-template">
 		{{#commify-number num_found}}{{this}}{{/commify-number}} matches
