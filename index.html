@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Collection Confection</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Le styles -->
+    <!-- this is a way broken down bootstrap, mostly grid, nav and responsive -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+	<div class="container">
+  		<div class="row">
+    		<div class="span7 headline">
+    			<h1 >Collection Confection</h1>
+				<p>Explore collections in LibraryCloud</p>
+				<form action="#" method="GET" id="search-form">
+				   <input name="q" type="text" placeholder="Keyword search" value="closing brief" />
+				   <input type="submit"/>
+				</form>
+    		</div>
+    		<div class="span4">
+				<div id="vis"></div>
+    		</div>
+    		<div class="span1">
+    		</div>
+    	</div><!--row-->
+		
+    	<div class="row">
+    		<div class="span6 column">
+				<h2 class="green">Harvard Collection</h2>
+				<div id="harvard-result-nums" class="results green"></div>
+				<div id="harvard">
+				</div><!--harvard-->
+			</div>
+			<div class="span6 column">
+				<h2 class="blue">Nuremberg Collection</h2>
+				<div id="nuremberg-result-nums" class="results blue"></div>
+				<div id="nuremberg">
+				</div><!--nuremberg-->
+			</div><!--span6-->
+    	</div><!--row-->
+
+    	<footer>
+      		<div class="row">
+      			<div class="span6">
+      				<a href="http://librarylab.law.harvard.edu/"><img class="stamp" src="img/liblabstamp.png"/></a>
+        		</div>
+        		<div class="span6">
+        			<p>Copyright &copy; 2012 The President and Fellows of Harvard College<br><a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a></p>
+      			</div>
+      		</div><!--row-->
+      	</footer>
+    </div><!--container-->
+    
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="js/handlebars.js"></script>
+    <script src="js/main.js"></script>
+	<script id="docs-template" type="text/x-handlebars-template">
+		{{#docs}}
+		<p class="a-result">
+		<a href="http://librarycloud.harvard.edu/v1/api/item/{{id}}" target="_blank">
+		<span class="item-title">
+			{{{title}}}
+		</span>
+		<span class="item-creator">
+		{{#if creator}}
+			by {{{creator}}}
+		{{/if}}
+		</span>
+		</a>		
+		</p>
+		{{/docs}}
+    </script> 
+
+	<script id="results-num-template" type="text/x-handlebars-template">
+		{{#commify-number num_found}}{{this}}{{/commify-number}} matches
+    </script>
+  </body>
+</html>
